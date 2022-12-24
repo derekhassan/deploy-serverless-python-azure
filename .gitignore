@@ -134,4 +134,8 @@ __queuestorage__
 __azurite_db*__.json
 .python_packages
 
+*.tfstate
+*.tfstate.*
+*.tfvars
+**/.terraform/*
 .vscode
