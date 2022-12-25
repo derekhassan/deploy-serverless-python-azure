@@ -52,5 +52,11 @@ resource "azurerm_linux_function_app" "function_app" {
   storage_account_access_key = azurerm_storage_account.storage_account.primary_access_key
   service_plan_id            = azurerm_service_plan.service_plan.id
 
-  site_config {}
+  site_config {
+    application_insights_key               = azurerm_application_insights.application_insights.instrumentation_key
+    application_insights_connection_string = azurerm_application_insights.application_insights.connection_string
+    application_stack {
+      python_version = 3.9
+    }
+  }
 }
